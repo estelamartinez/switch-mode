@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Retro</title>
+
+  <!-- Enlace a la hoja de estilos de Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Hoja de estilos por defecto (Modo Claro) -->
+  <link id="theme-style" href="style-claro.css" rel="stylesheet">
+  
+  <!-- Hoja de estilos para Modo Oscuro -->
+  <link id="dark-style" href="style-oscuro.css" rel="stylesheet" disabled>
+  
+  <!-- Hoja de estilos para Estilo Clásico -->
+  <link id="classic-style" href="style-clasico.css" rel="stylesheet" disabled>
+
+</head>
+<body>
+
+  <!-- Sección de Banner -->
+  <header class="bg-primary text-white text-center p-5">
+    <h1>Bienvenidos a la Tienda Retro</h1>
+    <p>Donde el pasado y el futuro se encuentran</p>
+    
+    <!-- Botones para alternar entre los temas -->
+    <button id="toggle-theme" class="btn btn-light">Modo Oscuro</button>
+    <button id="toggle-style" class="btn btn-light">Estilo Clásico</button>
+  </header>
+
+  <!-- Sección de Historia / Productos -->
+  <section class="container my-5">
+    <h2>Historia de la Tienda</h2>
+    <p>Somos una tienda especializada en productos retro. Desde consolas antiguas hasta juegos vintage, tenemos lo que buscas.</p>
+    
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto Retro">
+          <div class="card-body">
+            <h5 class="card-title">Consola Retro</h5>
+            <p class="card-text">Una consola clásica para revivir los viejos tiempos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto Retro">
+          <div class="card-body">
+            <h5 class="card-title">Juego Vintage</h5>
+            <p class="card-text">Recuerda los mejores momentos con un juego retro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Footer -->
+  <footer class="bg-dark text-white text-center p-3">
+    <p>&copy; 2025 Tienda Retro | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Bootstrap JS, Popper.js, y jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Script para alternar entre temas -->
+  <script>
+    // Funcionalidad para alternar entre el tema claro y oscuro
+    document.getElementById("toggle-theme").addEventListener("click", function() {
+      const themeStyle = document.getElementById("theme-style");
+      const darkStyle = document.getElementById("dark-style");
+
+      if (darkStyle.disabled) {
+        themeStyle.disabled = true;
+        darkStyle.disabled = false;
+        this.textContent = "Modo Claro";  // Cambiar el texto del botón
+      } else {
+        themeStyle.disabled = false;
+        darkStyle.disabled = true;
+        this.textContent = "Modo Oscuro"; // Cambiar el texto del botón
+      }
+    });
+
+    // Funcionalidad para alternar entre el estilo clásico y moderno
+    document.getElementById("toggle-style").addEventListener("click", function() {
+      const classicStyle = document.getElementById("classic-style");
+      const themeStyle = document.getElementById("theme-style");
+
+      if (classicStyle.disabled) {
+        themeStyle.disabled = true;
+        classicStyle.disabled = false;
+        this.textContent = "Estilo Moderno";  // Cambiar el texto del botón
+      } else {
+        classicStyle.disabled = true;
+        themeStyle.disabled = false;
+        this.textContent = "Estilo Clásico";  // Cambiar el texto del botón
+      }
+    });
+  </script>
+
+</body>
+</html>
